@@ -1,2 +1,7 @@
-<h1>Longest#game</h1>
-<p>Find me in app/views/longest/game.html.erb</p>
+<h1>Longest game</h1>
+<p> <%= @grid %> </p>
+<form action="/score" class="">
+  <label for="question">Your guess?</label>
+  <input type="text" id="question" name="guest" placeholder="your guest here">
+  <input type="submit" value="Go on!">
+</form>

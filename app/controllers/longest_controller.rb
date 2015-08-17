@@ -3,6 +3,7 @@ require 'json'
 
 class LongestController < ApplicationController
   def game
+    @grid = generate_grid(rand(5..9))
   end
 
   def score
