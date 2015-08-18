@@ -3,11 +3,20 @@ require 'json'
 
 class LongestController < ApplicationController
   def game
-    @grid = generate_grid(rand(5..9))
+    # @grid = generate_grid(3)
+    @grid = ["B", "I", "G", "D"]
   end
 
   def score
+    @end_time = Time.now
+    @guest = params[:guest]
+    @grid = params[:grid]
+    @start_time = params[:start_time].to_time
+    raise
+    @result = run_game(@guest, @grid, @start_time, @end_time)
   end
+
+private
 
 #------ from here, code copied from the solution of 01-Ruby/06-Parsing/02-Numbers-and-Letters
   def generate_grid(grid_size)

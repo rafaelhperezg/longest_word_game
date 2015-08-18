@@ -1,7 +1,10 @@
 <h1>Longest game</h1>
 <p> <%= @grid %> </p>
-<form action="/score" class="">
+<form action="<%= score_path %>" class="">
   <label for="question">Your guess?</label>
+  <% start_time = Time.now %>
+  <input type="hidden" id="start_time" name="start_time" value="<%=start_time%>">
+  <input type="hidden" id="grid" name="grid" value="<%=@grid%>">
   <input type="text" id="question" name="guest" placeholder="your guest here">
   <input type="submit" value="Go on!">
 </form>
